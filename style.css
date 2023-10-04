@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root {
+    /* font family */
+    --ff: 'Kumbh Sans', sans-serif;
+
+    /* font weight */
+    --fw-light:  400;
+    --fw-bold:   700;
+
+    /* font size */
+    --fs-h1: 2rem;
+    --fs-h2: 1rem;
+    --fs-p:  0.8rem;
+
+    /* color */
+    --gray:  dimgray;
+    --Soft-red: hsl(14, 88%, 65%);
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+    
+    /* background color */
+    --bg-white: white;
+    --bg-violet: hsl(273, 75%, 66%);
+    --bg-blue: hsl(240, 73%, 65%);
+
+    /* border radius */
+    --br-small: 12px;
+    --br-medium: 18px;
+    --br-large: 50%;
+
+    /* spacing */
+    --spacing-small: 1rem;
+    --spacing-medium:     calc(var(--spacing-small) * 2);
+    --spacing-large:      calc(var(--spacing-small) * 3);
+    --spacing-very-large: calc(var(--spacing-small) * 4);
+
+    /* box shadow */
+    --bs-light: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --bs-heavy: 0 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================mobile view================== */
+body {
+    background-image: linear-gradient(var(--bg-violet), var(--bg-blue));
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    width: 90%;
+    max-width: 1000px;
+    background-color: var(--bg-white);
+    border-radius: var(--br-medium);
+    box-shadow: var(--bs-light);
+    box-sizing: border-box;
+    font-family: var(--ff);
+    padding: 0 var(--spacing-small) var(--spacing-small) var(--spacing-small);
+}
+.illustration {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    margin: -90px auto 0 auto;
+}
+.illustration--1 {
+    z-index: 1;
+    width: 100%;
+}
+.illustration--2 {
+    margin-top: -60px;
+    width: 100%;
+}
+.illustration--3 {
+    display: none;
+}
+.illustration--4 {
+    display: none;
+}
+.illustration--5 {
+    display: none;
+}
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--ff);
+    font-size: var(--fs-h1);
+    font-weight: 700;
+}
+.text {
+    border-bottom: 1px solid var(--Light-grayish-blue);
+}
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--bg-white);
+    border: none;
+    padding: var(--spacing-small) 0;
+    font-family: var(--ff);
+    font-size: var(--fs-h2);
+    font-weight: 400;
+}
+.toggle:hover {
+    color: var(--Soft-red);
+}
+.answer {
+    position: relative;
+    font-family: var(--ff);
+    font-size: var(--fs-p);
+    line-height: 1rem;
+    text-align: justify;
+    height: 0;
+    overflow: hidden;
+    transition: all .2s;
+}
+.imgArrow {
+    transform: rotate(180deg);
+}
+.bold {
+    font-weight: 700;
+}
+
+/* ==================Desktop view===================== */
+@media (min-width: 800px){
+    .container {
+        min-height: 70vh;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding-top: var(--spacing-very-large);
+        padding-left: 0;
+        /* padding-right: var(--spacing-very-large); */
+    }
+    .illustration{
+        flex: 1;
+        height: 70vh;
+        width: 100%;
+        margin: 0;
+        margin-left: calc(var(--spacing-medium) * -2);
+    }
+    .illustration--1 {
+        z-index: 0;
+        width: 100%;
+    }
+    .illustration--2 {
+        display: none;
+        margin-top: -150px;
+        width: 100%;
+    }
+    .illustration3 {
+        width: 100%;
+        height: 100%;
+        margin-top: -450px;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-size: cover;
+    }
+    .illustration--3 {
+        display: none;
+        width: 100%;
+    }
+    .faq{
+        line-height: 2rem;
+        flex: 1;
+        margin-left: var(--spacing-medium);
+    /* padding-left: calc(var(--spacing-very-large) * 3); */
+    }
+    .text {
+        margin-bottom: var(--spacing-medium);
+    }
+    .boldText {
+        font-size: calc(var(--fs-h2) * 1.2);
+    }
+
+}
